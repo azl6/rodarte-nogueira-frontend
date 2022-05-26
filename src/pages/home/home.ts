@@ -11,4 +11,7 @@ export class HomePage {
 
   }
 
+  listar(){
+    this.navCtrl.push("ListagemPage");
+  }
 }
