@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlunoService } from '../../services/aluno.service';
 
 /**
  * Generated class for the ListagemPage page.
@@ -15,11 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListagemPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     public alunoService: AlunoService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListagemPage');
+    this.alunoService.findAllByIdadeCrescente()
+    .subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    })
   }
-
 }
