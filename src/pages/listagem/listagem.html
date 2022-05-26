@@ -9,14 +9,14 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let item of items">
+    <ion-item *ngFor="let item of items">
       <ion-thumbnail item-start>
-        <img src="{{bucketUrl}}/cat{{item.id}}.jpg">
+        <img src="https://rodarte-nogueira-imgs.s3.sa-east-1.amazonaws.com/cp{{item.identificacao}}.png">
       </ion-thumbnail>
       <h2> Identificação: {{ item.identificacao }} </h2>
       <h2> Nome: {{ item.nome }} </h2>
       <h2> Idade: {{ item.idade }} </h2>
       <h2> Média: {{ item.media }} </h2>
-    </button>
+    </ion-item>
   </ion-list>
 </ion-content>
