@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlunoDTO } from '../../models/aluno.dto';
 import { AlunoService } from '../../services/aluno.service';
 
 /**
@@ -16,6 +17,8 @@ import { AlunoService } from '../../services/aluno.service';
 })
 export class ListagemPage {
 
+  items: AlunoDTO[];
+
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public alunoService: AlunoService) {
@@ -24,7 +27,7 @@ export class ListagemPage {
   ionViewDidLoad() {
     this.alunoService.findAllByIdadeCrescente()
     .subscribe(response => {
-      console.log(response);
+      this.items = response;
     }, error => {
       console.log(error);
     })

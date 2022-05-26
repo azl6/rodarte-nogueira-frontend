@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-<p>Listagem de alunos</p>
+  <ion-list>
+    <button ion-item *ngFor="let item of items">
+      <ion-thumbnail item-start>
+        <img src="{{bucketUrl}}/cat{{item.id}}.jpg">
+      </ion-thumbnail>
+      <h2> Identificação: {{ item.identificacao }} </h2>
+      <h2> Nome: {{ item.nome }} </h2>
+      <h2> Idade: {{ item.idade }} </h2>
+      <h2> Média: {{ item.media }} </h2>
+    </button>
+  </ion-list>
 </ion-content>
