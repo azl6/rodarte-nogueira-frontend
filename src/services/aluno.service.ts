@@ -13,4 +13,8 @@ export class AlunoService {
     findAllByIdadeCrescente() : Observable<AlunoDTO[]>{
         return this.http.get<AlunoDTO[]>(`${API_CONFIG.baseUrl}/alunos`)
     }
+
+    gerarExcel(): Observable<any>{
+        return this.http.post(`${API_CONFIG.baseUrl}/alunos/gerarExcel`, {})
+    }
 }

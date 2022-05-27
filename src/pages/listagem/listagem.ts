@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 import { AlunoDTO } from '../../models/aluno.dto';
 import { AlunoService } from '../../services/aluno.service';
 
@@ -19,15 +19,27 @@ export class ListagemPage {
 
   items: AlunoDTO[];
 
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
      public navParams: NavParams,
-     public alunoService: AlunoService) {
+     public alunoService: AlunoService,
+     public loadCtrl: LoadingController) {
+  }
+
+  presentLoading(){
+    let loader = this.loadCtrl.create({
+      content: "Carregando..."
+    });
+    loader.present();
+    return loader;
   }
 
   ionViewDidLoad() {
+    let loader = this.presentLoading();
     this.alunoService.findAllByIdadeCrescente()
     .subscribe(response => {
       this.items = response;
+      loader.dismiss();
     }, error => {
       console.log(error);
     })

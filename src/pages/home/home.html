@@ -1,11 +1,12 @@
 <ion-content padding>
-  <h3>Sistema de leitura de Excel v1.0</h3>
 
-  <img src="assets/imgs/excel.png" alt="">
-
-
-<button ion-button block (click)="listar()">Listar todos os alunos</button>
-<button ion-button block outline>Exportar tabela</button>
+  <div class="center">
+    <h3>Sistema de leitura de Excel v1.0</h3>
+    <img src="assets/imgs/excel.png" alt="">
+    <button ion-button class="green_full_btn" block (click)="listar()">Listar todos os alunos</button>
+    <button ion-button class="green_btn" block outline (click)="gerarExcel()">Exportar tabela</button>
+  </div>
+  
 
 
 </ion-content>

@@ -12,4 +12,21 @@ page-home {
         padding: 10px;
     }
 
+    .center {
+        margin: auto;
+        width: 70%;
+        border: none;
+        padding: 0px;
+        }
+
+    .green_full_btn{
+        background:rgba(24,92,55,255);
+        color: #ffffff;
+    }
+
+    .green_btn{
+        border-color:rgba(24,92,55,255);
+        color: rgba(24,92,55,255);
+    }
+
 }
